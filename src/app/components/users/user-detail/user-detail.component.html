@@ -1,0 +1,29 @@
+<div *ngIf="selectedUser != null">
+    <h5>User Details:</h5>
+    <div><strong>Id: </strong>{{ selectedUser.id }}</div>
+    <div><strong>Name: </strong>{{ selectedUser.name }}</div>
+    <div><strong>Username: </strong>{{ selectedUser.username }}</div>
+    <div><strong>Email: </strong>{{ selectedUser.email }}</div>
+    <div><strong>Address: </strong>
+        <pre>{{ selectedUser.address | json}}</pre>
+    </div>
+    <div><strong>Phone: </strong>{{ selectedUser.phone }}</div>
+    <div><strong>Website: </strong>{{ selectedUser.website }}</div>
+    <div><strong>Company: </strong>
+        <pre>{{ selectedUser.company | json}}</pre>
+    </div>
+    <hr>
+    <div>
+        <button class="btn btn-primary" (click)="createUser()">Create User</button>
+        <button class="btn btn-success" (click)="updateUser()">Update User</button>
+        <button class="btn btn-warning" (click)="getUserPosts()">Get Posts By User</button>
+        <button class="btn btn-danger" (click)="deleteUser()">Delete User</button>
+    </div>
+    <div>
+        <h5>User Posts:</h5>
+        <pre>{{ userPosts | json}}</pre>
+    </div>
+</div>
+<div *ngIf="selectedUser === null">
+    Please select a user from the given list.
+</div>
